@@ -1,0 +1,23 @@
+name: Run Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Run lint fix
+      run: yarn fix
+
+    - name: Run test
+      run: yarn test
