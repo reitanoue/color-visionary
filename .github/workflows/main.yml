@@ -1,4 +1,4 @@
-name: Run Lint
+name: CI
 
 on:
   pull_request:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  build:
+  lint:
+    name: Run Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +19,17 @@ jobs:
 
     - name: Run lint fix
       run: yarn fix
+
+  test:
+    name: Run Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: yarn install
 
     - name: Run test
       run: yarn test
