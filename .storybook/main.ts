@@ -1,7 +1,6 @@
-import type { StorybookConfig } from '@storybook/nextjs'
-const path = require('path')
+const path = require('path');
 
-const config: StorybookConfig = {
+const config = {
   stories: ['../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -26,14 +25,14 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   webpackFinal: async (config) => {
-    config.resolve = config.resolve || {}
+    config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...config.resolve.alias,
       '@/components': path.resolve(__dirname, '../src/components'),
       '@/i18n': path.resolve(__dirname, '../i18n'),
       'next-i18next': 'react-i18next',
-    }
-    config.module?.rules?.push({
+    };
+    config.module.rules.push({
       test: /\.css$/,
       use: [
         {
@@ -46,8 +45,10 @@ const config: StorybookConfig = {
         },
       ],
       include: path.resolve(__dirname, '../'),
-    })
-    return config
+    });
+    return config;
   },
-}
-export default config
+};
+
+module.exports = config;
+
