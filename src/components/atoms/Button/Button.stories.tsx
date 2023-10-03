@@ -36,6 +36,6 @@ export const SearchButton: Story = {
     text: '検索',
     bgcolor: 'bg-base',
     textcolor: 'text-white',
-    fontSize:  '2xl',
+    fontSize: '2xl',
   },
 }

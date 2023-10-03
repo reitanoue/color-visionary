@@ -16,7 +16,7 @@ const config: StorybookConfig = {
           implementation: require('postcss'),
         },
       },
-    }
+    },
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -40,16 +40,13 @@ const config: StorybookConfig = {
           loader: 'postcss-loader',
           options: {
             postcssOptions: {
-              plugins: [
-                require('tailwindcss'),
-                require('autoprefixer'),
-              ],
+              plugins: [require('tailwindcss'), require('autoprefixer')],
             },
           },
         },
       ],
       include: path.resolve(__dirname, '../'),
-    });
+    })
     return config
   },
 }
