@@ -56,5 +56,6 @@
     "tailwindcss": "latest",
     "typescript": "latest",
     "vite": "^4.4.9"
-  }
+  },
+  "type": "module"
 }
