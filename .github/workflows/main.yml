@@ -14,6 +14,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: yarn
+
     - name: Install dependencies
       run: yarn install
 
@@ -25,14 +31,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.yarn
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
     - name: Checkout code
       uses: actions/checkout@v2
 
