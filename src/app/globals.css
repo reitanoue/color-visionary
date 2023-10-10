@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+input[type='color'] {
+  -webkit-appearance: none; /* ウェブキットベースのブラウザ（Chrome, Safari）でのデフォルトのスタイルを削除 */
+  -moz-appearance: none;
+  appearance: none;
+}
